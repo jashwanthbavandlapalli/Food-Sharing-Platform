@@ -12,25 +12,25 @@ A food-sharing platform connects people to reduce food waste and fight hunger by
 ## Setup Instructions
 
 ### Clone the Repository
-git clone https://github.com/jashwanthbavandlapalli/Food-Sharing-Platform.git
-cd Food-Sharing-Platform
+- git clone https://github.com/jashwanthbavandlapalli/Food-Sharing-Platform.git
+- cd Food-Sharing-Platform
 
 ### Create and Activate a Virtual Environment
-python -m venv venv
-source venv/bin/activate # On Windows: env\Scripts\activate
+- python -m venv venv
+- source venv/bin/activate # On Windows: env\Scripts\activate
 
 ### Install Dependencies
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ### Set Up the Database
-python manage.py makemigrations
-python manage.py migrate
+- python manage.py makemigrations
+- python manage.py migrate
 
 ### Run the Development Server
-python manage.py runserver
+- python manage.py runserver
 
-### Access the Application Open your browser and go to 
-http://127.0.0.1:8000/
+### To Access the Application 
+- http://127.0.0.1:8000/
 
 ## Usage
 
