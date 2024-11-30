@@ -13,6 +13,14 @@ def contact(request):
 def about(request):
     return render(request, 'about.html')
 
+def home(request):
+    return render(request, 'home.html')
+
+def donations(request):
+    return render(request, 'donations.html')
+
+def search_food(request):
+    return render(request, 'search_food')
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
