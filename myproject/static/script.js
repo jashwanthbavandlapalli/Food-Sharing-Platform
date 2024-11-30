@@ -17,18 +17,12 @@ function toggleTheme() {
     }
 }
 
-// Add event listener for theme toggle
-document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-// Initialize theme on page load
-window.onload = function() {
-    if (document.body.classList.contains('dark-theme')) {
-        // If dark mode is active, set the dark logo and moon icon
-        document.getElementById('logo').src = "{% static 'images/logo_dark.png' %}";
-        document.getElementById('theme-toggle').textContent = "🌙"; // Moon icon
-    } else {
-        // Default to light mode
-        document.getElementById('logo').src = "{% static 'images/logo_bright.png' %}";
-        document.getElementById('theme-toggle').textContent = "☀️"; // Sun icon
-    }
-};
+// Toggle dark mode
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+});
+
+

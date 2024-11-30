@@ -17,22 +17,48 @@ header {
   padding: 10px 20px;
   transition: background-color 0.3s;
 }
-
-/* Logo Style */
-.logo img {
-  width: 50px;
+.logo-container {
+  display: flex;
+  transform: scale(1.5);
   height: 50px;
+  width: 50px;
 }
+
+/* Hide both logos initially */
+#light-logo,
+#dark-logo {
+    display: none;
+}
+
+/* Show light mode logo by default */
+body:not(.dark-mode) #light-logo {
+    display: block;
+}
+
+/* Show dark mode logo when dark mode is active */
+body.dark-mode #dark-logo {
+    display: block;
+}
+
 
 /* Navigation Links */
 nav a {
   margin: 0 15px;
   text-decoration: none;
   color: navy;
-  font-size: 16px;
+  font-size: 20px;
   transition: color 0.3s;
+  font-weight: bold;
 }
-
+.submit-button {
+  margin: 0 15px;
+  text-decoration: none;
+  color: navy;
+  font-size: 20px;
+  transition: color 0.3s;
+  font-weight: bold;
+  border-radius: 0px;
+}
 nav a:hover {
   color: darkblue;
 }
@@ -74,7 +100,7 @@ body.dark-mode header {
 }
 
 body.dark-mode nav a {
-  color: #ffffff;
+  color: black;
 }
 
 body.dark-mode nav a:hover {
@@ -82,7 +108,7 @@ body.dark-mode nav a:hover {
 }
 
 body.dark-mode #search-bar {
-  border-color: white;
+  border-color: black;
 }
 
 /* Light Theme Styles (default) */
@@ -130,8 +156,8 @@ nav a {
   margin-top: 10px;
 }
 
-#logo {
-  width: 120px;  /* Set the size for logos */
+.logo {
+  width: 150px;  /* Set the size for logos */
 }
 
 /* Dark Theme Styles */
@@ -169,7 +195,7 @@ body.dark-theme #theme-toggle {
 /* Content Section Styles */
 .content {
   margin: 40px auto;
-  max-width: 1350px;
+  max-width: 1200px;
   padding: 0 20px;
 }
 
@@ -373,3 +399,99 @@ body.dark-theme #theme-toggle {
   background-color: #e07b00; /* Darker orange on hover */
 }
 
+/* Footer Styles */
+.footer {
+  background-color: RGB(50, 50, 50);
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Quick Links */
+.footer-links h3, .footer-contact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f39c12;
+}
+
+/* Contact Section */
+.footer-contact p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  border-top: 1px solid RGB(50, 50, 50);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin-bottom: 10px;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: #bdc3c7;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f39c12;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-contact, .footer-links, .footer-logo {
+      text-align: center;
+  }
+}
