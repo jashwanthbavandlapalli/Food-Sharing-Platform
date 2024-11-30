@@ -22,6 +22,10 @@ header {
   transform: scale(1.5);
   height: 50px;
   width: 50px;
+
+}
+.search-container {
+  align-items: center;
 }
 
 /* Hide both logos initially */
@@ -58,6 +62,11 @@ nav a {
   transition: color 0.3s;
   font-weight: bold;
   border-radius: 0px;
+  border-color: white;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  
 }
 nav a:hover {
   color: darkblue;
@@ -154,10 +163,6 @@ nav a {
 .logo-container {
   text-align: left;
   margin-top: 10px;
-}
-
-.logo {
-  width: 150px;  /* Set the size for logos */
 }
 
 /* Dark Theme Styles */
