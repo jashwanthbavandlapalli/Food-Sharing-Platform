@@ -1,146 +1,130 @@
 /* Base Styles */
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #fff;
+
 }
 
 body {
   font-family: Arial, sans-serif;
   transition: background-color 0.3s, color 0.3s;
+  color: #fff;
+  background-color: #1c1c1c;
 }
+/* Header Styles */
 
 header {
+  background: linear-gradient(90deg, #000, #333);
+  color: #fff;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeInDown 1s ease;
 }
-.logo-container {
-  display: flex;
-  transform: scale(1.5);
-  height: 50px;
-  width: 50px;
 
+header .logo-container img {
+  height: 50px;
 }
-.search-container {
+nav {
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: right; 
+  gap: 20px; 
+}
+header nav {
+  display: flex;
   align-items: center;
 }
-
-/* Hide both logos initially */
-#light-logo,
-#dark-logo {
-    display: none;
-}
-
-/* Show light mode logo by default */
-body:not(.dark-mode) #light-logo {
-    display: block;
-}
-
-/* Show dark mode logo when dark mode is active */
-body.dark-mode #dark-logo {
-    display: block;
-}
-
-
-/* Navigation Links */
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: navy;
-  font-size: 20px;
-  transition: color 0.3s;
+header nav a {
+  color: white;
   font-weight: bold;
-}
-.submit-button {
-  margin: 0 15px;
-  text-decoration: none;
-  color: navy;
   font-size: 20px;
-  transition: color 0.3s;
-  font-weight: bold;
-  border-radius: 0px;
-  border-color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
   background-color: white;
-  cursor: pointer;
-  border: none;
-  
-}
-nav a:hover {
-  color: darkblue;
+  transition: width 0.3s ease;
 }
 
-/* Search Bar Styles */
+header nav a:hover {
+  color: #ffcc00; /* Highlight color */
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Search Bar */
 .search-container {
   display: flex;
   align-items: center;
 }
 
 #search-bar {
-  padding: 5px 10px;
-  font-size: 14px;
-  border: 2px solid navy;
+  padding: 10px;
+  border: 2px solid #fff;
   border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s;
+  margin-right: 10px;
+  font-weight: bold;
+  background-color: #333;
+  color: #fff;
 }
 
-#search-bar:focus {
-  border-color: darkblue;
-}
-
-/* Theme Toggle Button */
-.theme-icon {
-  width: 30px;
-  height: 30px;
+.submit-button {
+  background-color: #f0a500;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Dark Theme Styles */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+.submit-button:hover {
+  background-color: #d98d00;
 }
 
-body.dark-mode header {
-  background-color: #000;
+/* Header Animation */
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
 
-body.dark-mode nav a {
-  color: black;
+
+/*LOGO*/
+.logo-container {
+  display: flex;
+  transform: scale(1.5);
+  height: 50px;
+  width: 50px;
+  align-items: left;
+
 }
 
-body.dark-mode nav a:hover {
-  color: lightblue;
-}
 
-body.dark-mode #search-bar {
-  border-color: black;
-}
-
-/* Light Theme Styles (default) */
-body.light-mode {
-  background-color: #ffffff;
-  color: #000;
-}
-
-body.light-mode header {
-  background-color: #ffffff;
-}
-
-body.light-mode nav a {
-  color: navy;
-}
-
-body.light-mode nav a:hover {
-  color: darkblue;
-}
-
-body.light-mode #search-bar {
-  border-color: navy;
-}
 /* Default styles (Light Theme) */
 body {
   background-color: white;
@@ -148,54 +132,85 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-nav a {
-  color: navy;  /* Navy blue for links in light mode */
-  text-decoration: none;
-  margin-right: 15px;
+/* Footer Styles */
+footer {
+  background: #1a1a1a;
+  padding: 20px 10%;
+  color: #fff;
+  animation: fadeInUp 1s ease;
 }
 
-#search-bar {
-  padding: 8px;
-  font-size: 14px;
-  margin-top: 10px;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.logo-container {
+.footer-logo {
   text-align: left;
-  margin-top: 10px;
 }
 
-/* Dark Theme Styles */
-body.dark-theme {
-  background-color: #121212;  /* Dark background */
-  color: white;
+.footer-logo img {
+  height: 50px;
+  margin-bottom: 10px;
 }
 
-body.dark-theme nav a {
-  color: #aab7b8;  /* Lighter links for dark theme */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
 }
 
-body.dark-theme #logo {
-  filter: brightness(0) invert(1);  /* Invert the logo for dark mode */
+.footer-links li {
+  margin: 5px 0;
 }
 
-/* Dark mode theme toggle button */
-body.dark-theme #theme-toggle {
+.footer-links a {
+  color: #f0a500;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
   color: #fff;
 }
 
-/* Additional styling for header */
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: #f4f4f4;
+.footer-contact p {
+  margin: 5px 0;
 }
 
-#header.dark-theme {
-  background-color: #333;  /* Dark header background */
+.footer-bottom {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
 }
+
+.social-icons a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f0a500;
+}
+
+/* Footer Animation */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
 
 /* Content Section Styles */
 .content {
@@ -310,7 +325,7 @@ body.dark-theme #theme-toggle {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Black overlay with opacity */
+  background: rgba(0, 0, 0, 0.6); /* Black overlay with opacity */
   z-index: 1;
 }
 
@@ -404,99 +419,3 @@ body.dark-theme #theme-toggle {
   background-color: #e07b00; /* Darker orange on hover */
 }
 
-/* Footer Styles */
-.footer {
-  background-color: RGB(50, 50, 50);
-  color: #fff;
-  padding: 40px 20px;
-  font-family: 'Arial', sans-serif;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Logo Section */
-.footer-logo img {
-  width: 150px;
-  margin-bottom: 10px;
-}
-
-.footer-logo p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* Quick Links */
-.footer-links h3, .footer-contact h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #f39c12;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links li {
-  margin: 5px 0;
-}
-
-.footer-links a {
-  color: #bdc3c7;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #f39c12;
-}
-
-/* Contact Section */
-.footer-contact p {
-  font-size: 0.9rem;
-  margin: 5px 0;
-}
-
-/* Bottom Section */
-.footer-bottom {
-  border-top: 1px solid RGB(50, 50, 50);
-  padding-top: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 20px;
-}
-
-.footer-bottom p {
-  margin-bottom: 10px;
-}
-
-/* Social Icons */
-.social-icons a {
-  color: #bdc3c7;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #f39c12;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .footer-container {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .footer-contact, .footer-links, .footer-logo {
-      text-align: center;
-  }
-}

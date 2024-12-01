@@ -16,11 +16,14 @@ def about(request):
 def home(request):
     return render(request, 'home.html')
 
-def donations(request):
-    return render(request, 'donations.html')
-
+def donate_food(request):
+    return render(request, 'donate_food.html')
+def request_food(request):
+    return render(request, 'request_food.html')
 def search_food(request):
     return render(request, 'search_food')
+def find_us(request):
+    return render(request, 'find_us.html')
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
