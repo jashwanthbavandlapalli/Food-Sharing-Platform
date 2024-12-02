@@ -50,7 +50,6 @@ header nav a {
   transition: color 0.3s ease;
 }
 
-
 header nav a::after {
   content: '';
   position: absolute;
@@ -65,7 +64,6 @@ header nav a::after {
 header nav a:hover {
   color: #ffcc00; /* Highlight color */
 }
-
 header nav a:hover::after {
   width: 100%;
 }
