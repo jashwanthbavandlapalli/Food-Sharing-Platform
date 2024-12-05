@@ -18,21 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from myapp import views
 from django.contrib.auth import views as auth_views
-from django.conf.urls.i18n import i18n_patterns
+from django.http import HttpResponse
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.base, name='base'),
-    path('contact/', views.contact, name='contact'),
-    path('about/', views.about, name='about'),
-    path('signup/', views.signup, name='signup'),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('', views.home, name='home'),
-    path('',views.donate_food, name='donate_food'),
-    path('', views.request_food, name='request_food'),
-    path('',views.search_food, name='search_food'),
-    path('',views.find_us, name='find_us'),
-
+    path('', include("myapp.urls")),
 ]

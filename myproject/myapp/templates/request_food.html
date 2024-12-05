@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\request_food.css' %}">
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\styles.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\header.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\hero.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\footer.css' %}" rel="stylesheet" >
+</head>
+<header class="header">
+    <div class="logo-container">
+        <img src="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\images\logo_dark.png' %}" alt="Logo">
+    </div>
+    <nav>
+        <a href="{% url 'home' %}" class="main_html">Home</a>
+        <a href="{% url 'donate_food' %}">Donate</a>
+        <a href="{% url 'request_food' %}">Request</a>
+        <a href="{% url 'find_us' %}">Find Us</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+        <!-- Theme Toggle Button -->
+    </nav>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for food..">
+        <button class="submit-button" type="submit">Search</button>
+    </div>
+</header>
+<div class="request-food-container">
+    <div class="food-item">
+        <img src="{% static 'myapp/images/hotel1.jpg' %}" alt="Hotel 1">
+        <h3>Hotel Savera</h3>
+        <p>Location: Hyderabad, Telangana</p>
+        <p>A place where traditional meets modern cuisine.</p>
+        <button class="request-btn">Request Food</button>
+    </div>
+
+    <div class="food-item">
+        <img src="{% static 'myapp/images/hotel2.jpg' %}" alt="Hotel 2">
+        <h3>Indigo Restaurant</h3>
+        <p>Location: Secunderabad, Telangana</p>
+        <p>Classic recipes with a modern twist.</p>
+        <button class="request-btn">Request Food</button>
+    </div>
+
+    <div class="food-item">
+        <img src="{% static 'myapp/images/hotel3.jpg' %}" alt="Hotel 3">
+        <h3>FastBites</h3>
+        <p>Location: Warangal, Telangana</p>
+        <p>Your go-to spot for delicious fast food!</p>
+        <button class="request-btn">Request Food</button>
+    </div>
+</div>

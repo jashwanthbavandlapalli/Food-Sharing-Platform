@@ -1,0 +1,71 @@
+/* Container for the food items */
+.request-food-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Individual food item container */
+.food-item {
+    width: 30%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect on food items */
+.food-item:hover {
+    transform: scale(1.05);
+}
+
+/* Image styling */
+.food-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Title and location styling */
+.food-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.food-item p {
+    color: #777;
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Request button styling */
+.request-btn {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on the button */
+.request-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsiveness: stack items vertically on smaller screens */
+@media (max-width: 768px) {
+    .food-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
