@@ -4,7 +4,7 @@
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-size: cover;
-    color: #333;
+    color: #414141;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
     width: 350px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    background: rgb(42, 42, 42);
+    background: rgb(75, 75, 75);
   }
   
   /* Form Heading */

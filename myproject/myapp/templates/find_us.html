@@ -1,13 +1,132 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Us</title>
+    <!-- Link to Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
+        /* Set the map's size */
         #map {
-            height: 400px; /* Set your desired height */
-            width: 100%; /* Full width */
+            height: 600px;
+            width: 100%;
         }
-    </style>
+        body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+        color: #fff;
+        background-color: #1c1c1c;
+        }
+
+        .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+  animation: fadeIn 1s ease-out;
+}
+
+.row .image-container,
+.row .text-container {
+  flex: 1;
+  margin: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.text-container h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.text-container p {
+  font-size: 18px;
+  color: #555;
+}
+    </style>    
+    
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\header.css' %}" rel="stylesheet" >
 </head>
+<header class="header">
+    <div class="logo-container">
+        <img src="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\images\logo_dark.png' %}" alt="Logo">
+    </div>
+    
+    <nav>
+        <a href="{% url 'home' %}" class="main_html">Home</a>
+        <a href="{% url 'donate_food' %}">Donate</a>
+        <a href="{% url 'request_food' %}">Request</a>
+        <a href="{% url 'find_us' %}">Find Us</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+        <!-- Theme Toggle Button -->
+    </nav>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for food..">
+        <button class="submit-button" type="submit">Search</button>
+    </div>
+</header>
+
+<body>
+
+    <h1>Find Orphanages on the Map</h1>
+    
+    <!-- This div will display the map -->
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript library -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        // Initialize the map and set the view to Hyderabad, Telangana (latitude, longitude) with zoom level
+        var map = L.map('map').setView([17.385044, 78.486671], 12); // Coordinates for Hyderabad
+
+        // Add OpenStreetMap tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Array of orphanage locations with their coordinates and names
+        var orphanages = [
+            { lat: 17.4204, lng: 78.4797, name: "Sree Orphanage" },
+            { lat: 17.3840, lng: 78.4917, name: "Little Hearts Orphanage" },
+            { lat: 17.4422, lng: 78.4806, name: "Samaritan Orphanage" },
+            { lat: 17.3839, lng: 78.4991, name: "The Good Shepherd Orphanage" },
+            { lat: 17.4406, lng: 78.4630, name: "Balakuteer Orphanage" },
+            { lat: 17.4114, lng: 78.4973, name: "Anandashram Orphanage" },
+            { lat: 17.4555, lng: 78.4123, name: "Mannapuram Orphanage" },
+            { lat: 17.3813, lng: 78.4824, name: "Hope Foundation Orphanage" },
+            { lat: 17.3978, lng: 78.4712, name: "Happiness Home Orphanage" },
+            { lat: 17.4447, lng: 78.4959, name: "Nightingale Orphanage" },
+            { lat: 17.4290, lng: 78.4746, name: "Blessings Orphanage" },
+            { lat: 17.4742, lng: 78.4898, name: "Shalom Orphanage" }
+        ];
+
+        // Loop through orphanages array and add markers to the map
+        orphanages.forEach(function(orphanage) {
+            L.marker([orphanage.lat, orphanage.lng]).addTo(map)
+                .bindPopup(orphanage.name) // Popup message on marker click
+                .openPopup();
+        });
+
+    </script>
+
+</body>
+</html>

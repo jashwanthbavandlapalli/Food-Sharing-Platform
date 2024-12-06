@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\request_food.css' %}">
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\donate_food.css' %}" rel="stylesheet">
     <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\styles.css' %}" rel="stylesheet" >
     <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\header.css' %}" rel="stylesheet" >
     <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\hero.css' %}" rel="stylesheet" >
@@ -33,28 +33,101 @@
         <button class="submit-button" type="submit">Search</button>
     </div>
 </header>
-<div class="request-food-container">
-    <div class="food-item">
-        <img src="{% static 'myapp/images/hotel1.jpg' %}" alt="Hotel 1">
-        <h3>Hotel Savera</h3>
-        <p>Location: Hyderabad, Telangana</p>
-        <p>A place where traditional meets modern cuisine.</p>
-        <button class="request-btn">Request Food</button>
+<!--Body-->
+
+<main id="orphanages-section" class="orphanages-container">
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-1.jpeg' %}" alt="Orphanage 1">
+        <h2>Delicious Pizza</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>This cheesy pizza is made with fresh ingredients and baked to perfection.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-2.jpg' %}" alt="Orphanage 2">
+        <h2>Juicy Burger</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>A succulent burger with a side of crispy fries.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-3.jpg' %}" alt="Orphanage 3">
+        <h2>Avocado Toast</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>Healthy avocado toast, perfect for breakfast.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-4.jpg' %}" alt="Orphanage 3">
+        <h2>Sushi Rolls</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>Delicious sushi rolls with fresh ingredients.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-5.webp' %}" alt="Orphanage 3">
+        <h2>Ice Cream Sundae</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>A delightful sundae with a variety of toppings.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-6.avif' %}" alt="Orphanage 3">
+        <h2>Chocolate Cake</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>A moist chocolate cake for dessert lovers.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-7.jpg' %}" alt="Orphanage 3">
+        <h2>Spaghetti Pasta</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>Italian-style pasta with rich tomato sauce and herbs.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-8.avif' %}" alt="Orphanage 3">
+        <h2>Grilled Sandwich</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>A crispy sandwich filled with veggies and cheese.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-9.jpg' %}" alt="Orphanage 3">
+        <h2>Fresh Salad</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>Healthy and refreshing, topped with a zesty dressing.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-10.jpg' %}" alt="Orphanage 3">
+        <h2>Anandashram Orphanage</h2>
+        <p>Location: Warangal, India</p>
+        <p>Transforming lives of orphaned children with education, care, and support.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-11.jpg' %}" alt="Orphanage 3">
+        <h2>Shishu Mandir Orphanage</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>A place of compassion and opportunity for abandoned children to thrive.</p>
+    </div>
+    <div class="orphanage-card">
+        <img src="{% static 'myapp\images\hotel-12.jpg' %}" alt="Orphanage 3">
+        <h2>Sri Venkateshwara Orphanage</h2>
+        <p>Location: Hyderabad, India</p>
+        <p>Providing shelter, care, and hope for children in need of a brighter future.</p>
     </div>
 
-    <div class="food-item">
-        <img src="{% static 'myapp/images/hotel2.jpg' %}" alt="Hotel 2">
-        <h3>Indigo Restaurant</h3>
-        <p>Location: Secunderabad, Telangana</p>
-        <p>Classic recipes with a modern twist.</p>
-        <button class="request-btn">Request Food</button>
-    </div>
+    <script>
+        document.querySelector('.donate-button').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            document.querySelector('#orphanages-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
+    
+</main>
+<!--
 
-    <div class="food-item">
-        <img src="{% static 'myapp/images/hotel3.jpg' %}" alt="Hotel 3">
-        <h3>FastBites</h3>
-        <p>Location: Warangal, Telangana</p>
-        <p>Your go-to spot for delicious fast food!</p>
-        <button class="request-btn">Request Food</button>
+ 
+    <div class="hotel-card">
+        <img src="{% static 'myapp/images/hotel-9.jpg' %}" alt="Hotel 9">
+        <h2>Avocado Toast</h2>
+        <p>Location: Portland</p>
+        <p>Healthy avocado toast, perfect for breakfast.</p>
+        <button class="request-button">Request Now</button>
     </div>
-</div>
+</main>
+-->

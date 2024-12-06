@@ -1,6 +1,7 @@
 /* Header Styles */
 
 header {
+    font-family: Arial, sans-serif;
     background: linear-gradient(90deg, #000, #333);
     color: #fff;
     padding: 20px;
