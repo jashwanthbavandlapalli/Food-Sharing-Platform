@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\donate_form.css' %}">
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\styles.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\header.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\hero.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\footer.css' %}" rel="stylesheet" >
+</head>
+<body>
+<header class="header">
+    <div class="logo-container">
+        <img src="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\images\logo_dark.png' %}" alt="Logo">
+    </div>
+    <nav>
+        <a href="{% url 'home' %}" class="main_html">Home</a>
+        <a href="{% url 'donate_food' %}">Donate</a>
+        <a href="{% url 'request_food' %}">Request</a>
+        <a href="{% url 'find_us' %}">Find Us</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+        <!-- Theme Toggle Button -->
+    </nav>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for food..">
+        <button class="submit-button" type="submit">Search</button>
+    </div>
+</header>
+
+<body>
+    <div class="donate-form-container">
+        <h1>Donate to an Orphanage</h1>
+
+        {% if donation_success %}
+        <!-- Thank you message after form submission -->
+        <div class="thank-you-message">
+            <h2>Thank You for Your Kindness!</h2>
+            <p>Your generous donation will bring smiles to many children in need.</p>
+            <a href="{% url 'kindness_page' %}" class="kindness-btn">Spread More Kindness</a>
+        </div>
+        {% else %}
+        <!-- Donation Form -->
+        <form method="POST" action="{% url 'submit_donate_form' %}">
+            {% csrf_token %}
+            <!-- Person Name -->
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Person Mobile Number -->
+            <div class="form-group">
+                <label for="mobile">Your Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+            </div>
+
+            <!-- Person Address -->
+            <div class="form-group">
+                <label for="address">Your Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+
+            <!-- Add Items Section -->
+            <div class="form-group">
+                <label for="items">Items You Have to Donate:</label>
+                <div id="items-container">
+                    <input type="text" class="item-input" placeholder="Enter item" id="item1" name="items" required>
+                </div>
+                <button type="button" class="add-item-btn" onclick="addItem()">Add Item</button>
+            </div>
+
+            <!-- Orphanage Selection -->
+            <div class="form-group">
+                <label for="orphanage">Select Orphanage to Donate:</label>
+                <select id="orphanage" name="orphanage" required>
+                    <option value="orphanage1">Hope Foundation</option>
+                    <option value="orphanage2">Bal Kalyan Sanstha</option>
+                    <option value="orphanage3">Annapurna Orphanage</option>
+                    <option value="orphanage4">Asha Kiran Orphanage</option>
+                    <option value="orphanage5">Snehalaya Orphanage</option>
+                    <option value="orphanage6">Shree Kunal Foundation</option>
+                    <option value="orphanage7">Sri Sarada Orphanage</option>
+                    <option value="orphanage8">The Little Angels Foundation</option>
+                    <option value="orphanage9">Vatsalya Home for Children</option>
+                    <option value="orphanage10">Anandashram Orphanage</option>
+                    <option value="orphanage11">Shishu Mandir Orphanage</option>
+                    <option value="orphanage12">Sri Venkateshwara Orphanage</option>
+                </select>
+            </div>
+
+            <!-- Additional Comments -->
+            <div class="form-group">
+                <label for="comments">Any Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Donation</button>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+    <script>
+        let itemCount = 1;
+
+function addItem() {
+    itemCount++;
+    const itemContainer = document.getElementById('items-container');
+    const newItem = document.createElement('div');
+    newItem.innerHTML = `
+        <input type="text" class="item-input" placeholder="Enter item" id="item${itemCount}" name="items" required>
+    `;
+    itemContainer.appendChild(newItem);
+}
+
+    </script>
+</body>
+</html>

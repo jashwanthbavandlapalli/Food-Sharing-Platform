@@ -1,0 +1,65 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+/* Hotels Container */
+.hotels-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.hotel-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotel-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.hotel-card h2 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #444;
+}
+
+.hotel-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Request Button */
+.request-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.request-button:hover {
+    background-color: #ff9d8d;
+}

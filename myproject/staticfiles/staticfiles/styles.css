@@ -1,0 +1,375 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+/* Logo Style */
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Navigation Links */
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: navy;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: darkblue;
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+#search-bar {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 2px solid navy;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#search-bar:focus {
+  border-color: darkblue;
+}
+
+/* Theme Toggle Button */
+.theme-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Dark Theme Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode header {
+  background-color: #000;
+}
+
+body.dark-mode nav a {
+  color: #ffffff;
+}
+
+body.dark-mode nav a:hover {
+  color: lightblue;
+}
+
+body.dark-mode #search-bar {
+  border-color: white;
+}
+
+/* Light Theme Styles (default) */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000;
+}
+
+body.light-mode header {
+  background-color: #ffffff;
+}
+
+body.light-mode nav a {
+  color: navy;
+}
+
+body.light-mode nav a:hover {
+  color: darkblue;
+}
+
+body.light-mode #search-bar {
+  border-color: navy;
+}
+/* Default styles (Light Theme) */
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a {
+  color: navy;  /* Navy blue for links in light mode */
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+#search-bar {
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.logo-container {
+  text-align: left;
+  margin-top: 10px;
+}
+
+#logo {
+  width: 120px;  /* Set the size for logos */
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+  background-color: #121212;  /* Dark background */
+  color: white;
+}
+
+body.dark-theme nav a {
+  color: #aab7b8;  /* Lighter links for dark theme */
+}
+
+body.dark-theme #logo {
+  filter: brightness(0) invert(1);  /* Invert the logo for dark mode */
+}
+
+/* Dark mode theme toggle button */
+body.dark-theme #theme-toggle {
+  color: #fff;
+}
+
+/* Additional styling for header */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f4f4f4;
+}
+
+#header.dark-theme {
+  background-color: #333;  /* Dark header background */
+}
+
+/* Content Section Styles */
+.content {
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+  animation: fadeIn 1s ease-out;
+}
+
+.row .image-container,
+.row .text-container {
+  flex: 1;
+  margin: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.text-container h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.text-container p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Zigzag Layout */
+.zigzag .image-container {
+  order: 2;
+}
+
+.zigzag .text-container {
+  order: 1;
+}
+
+.zigzag .image-container img {
+  transform: translateX(20px);
+}
+
+.zigzag .text-container {
+  transform: translateX(-20px);
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+      flex-direction: column;
+  }
+
+  .row .image-container,
+  .row .text-container {
+      margin-bottom: 20px;
+  }
+
+  .text-container h2 {
+      font-size: 24px;
+  }
+
+  .text-container p {
+      font-size: 16px;
+  }
+}
+
+/* Full height hero section with background image and fade to black */
+.hero-background {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  background-image: url(" {% static 'images/poor4.jpg' %} "); /* Your background image */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents background image repetition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Text color to white */
+}
+
+/* Fade to black effect on the background */
+.hero-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with opacity */
+  z-index: 1;
+}
+
+/* Hero text content */
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  color: #fff; /* Text color */
+  padding: 20px;
+}
+
+/* Typewriter effect for the heading */
+.typewriter {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #fff;
+  animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Fade-in effect for text */
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+/* Adding delay to each element */
+.fade-in-text:nth-child(2) {
+  animation-delay: 2s; /* Delay for paragraph */
+}
+
+.fade-in-text:nth-child(3) {
+  animation-delay: 4s; /* Delay for CTA button */
+}
+
+/* Keyframes for typewriter effect */
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+/* Keyframes for blink effect (for cursor in typewriter effect) */
+@keyframes blink {
+  50% {
+      border-color: transparent;
+  }
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Heading styles */
+.hero-content h1 {
+  font-size: 3rem; /* Large font size for heading */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Paragraph styles */
+.hero-content p {
+  font-size: 1.2rem; /* Slightly smaller text */
+  margin-bottom: 30px;
+}
+
+/* Call-to-action button */
+.cta-btn {
+  background-color: #ff8c00; /* Orange color */
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #e07b00; /* Darker orange on hover */
+}
+

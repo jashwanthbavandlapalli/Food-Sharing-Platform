@@ -4,6 +4,8 @@ from django.contrib.auth import login
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
+from .forms import DonationForm
+from .models import Orphanage
 
 
 # Create your views here.
@@ -24,6 +26,20 @@ def home(request):
 
 def donate_food(request):
     return render(request, 'donate_food.html')
+
+def donate_form(request):
+    return render(request, 'donate_form.html')
+
+def submit_donate_form(request):
+    if request.method == 'POST':
+        donation_success = True
+        if donation_success:
+            return redirect('kindness_page') 
+    return render(request, 'donation_form.html', {'donation_success': donation_success})
+
+def kindness_page(request):
+    return render(request, 'kindness_page.html')
+
 
 def request_food(request):
     return render(request, 'request_food.html')
@@ -60,3 +76,4 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('base')
+

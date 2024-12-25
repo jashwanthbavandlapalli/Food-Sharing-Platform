@@ -1,0 +1,117 @@
+/* Header Styles */
+
+header {
+    background: linear-gradient(90deg, #000, #333);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 1s ease;
+  }
+  
+  header .logo-container img {
+    height: 50px;
+  }
+  nav {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: right; 
+    gap: 20px; 
+  }
+  header nav {
+    display: flex;
+    align-items: center;
+  }
+  header nav a {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0 15px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  header nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  header nav a:hover {
+    color: #ffcc00; /* Highlight color */
+  }
+  header nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Search Bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #search-bar {
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .submit-button {
+    background-color: #f0a500;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #d98d00;
+  }
+  
+  /* Header Animation */
+  @keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  
+  /*LOGO*/
+  .logo-container {
+    display: flex;
+    transform: scale(1.5);
+    height: 50px;
+    width: 50px;
+    align-items: left;
+  }
+  
+  
+  /* Default styles (Light Theme) */
+  body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  

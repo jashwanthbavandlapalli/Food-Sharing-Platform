@@ -10,6 +10,7 @@
     <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\hero.css' %}" rel="stylesheet" >
     <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\footer.css' %}" rel="stylesheet" >
 </head>
+<body>
 <header class="header">
     <div class="logo-container">
         <img src="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\images\logo_dark.png' %}" alt="Logo">
@@ -33,6 +34,15 @@
         <button class="submit-button" type="submit">Search</button>
     </div>
 </header>
+
+<h1 class="h1">Donate to an Orphanage</h1>
+<div class="donate-container">
+    <p class="donate-text">Your contribution can bring smiles to many children in need. Select a cause to support.</p>
+    <a href="{% url 'donate_form' %}" class="donate-button">
+        <button type="button" class="donate-btn">Donate Now</button>
+    </a>    
+</div>
+
 
 
 <main id="orphanages-section" class="orphanages-container">
@@ -108,14 +118,9 @@
         <p>Location: Hyderabad, India</p>
         <p>Providing shelter, care, and hope for children in need of a brighter future.</p>
     </div>
-
-    <script>
-        document.querySelector('.donate-button').addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default anchor behavior
-            document.querySelector('#orphanages-section').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        });
-    </script>
     
+
 </main>
+
+</body>
+</html>

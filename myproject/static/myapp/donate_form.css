@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.donate-form-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333; /* Ensure the text inside input and textarea is visible */
+    background-color: #fff; /* Set background to white to avoid invisible text */
+}
+
+select {
+    width: 100%; /* Ensure select takes the full width */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333; /* Ensure text inside select is black */
+}
+
+select option {
+    color: #333; /* Set option text to black */
+    background-color: #fff; /* Set option background to white for better visibility */
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3498db; /* Change border color on focus */
+}
+
+.add-item-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-item-btn:hover {
+    background-color: #2980b9;
+}
+
+.submit-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #27ae60;
+}
+
+#items-container {
+    margin-bottom: 15px;
+}
+
+.item-input {
+    width: calc(100% - 50px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #333; /* Ensure text color inside the item input is visible */
+    background-color: #fff; /* Ensure background is white */
+}
+
+#items-container div {
+    margin-bottom: 10px;
+}
+
+
+/*kindness page*/

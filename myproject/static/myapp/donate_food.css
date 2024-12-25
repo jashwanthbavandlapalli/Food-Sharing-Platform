@@ -51,3 +51,56 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* Styling for the h1 element */
+h1.h1 {
+    font-size: 36px; /* Large font size for the title */
+    font-family: 'Arial', sans-serif; /* Font family */
+    color: #333; /* Dark gray color for the text */
+    text-align: center; /* Center-align the heading */
+    margin-top: 40px; /* Add space above the heading */
+    margin-bottom: 20px; /* Add space below the heading */
+    font-weight: bold; /* Make the title bold */
+}
+
+/* Styling for the donate-container */
+.donate-container {
+    display: flex; /* Use flexbox to align elements horizontally */
+    justify-content: space-between; /* Create space between the paragraph and button */
+    align-items: center; /* Vertically center the items */
+    width: 100%; /* Full width of the container */
+    padding: 10px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Styling for the donate-text (paragraph) */
+.donate-text {
+    font-size: 20px; /* Font size for the text */
+    color: #555; /* Lighter gray color */
+    white-space: nowrap; /* Ensure the text stays in one line */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+    flex-grow: 1; /* Allow text to take up remaining space */
+    margin-right: 5px; /* Space between the paragraph and the button */
+}
+
+/* Styling for the donate button container */
+.donate-button {
+    text-decoration: none; /* Remove underline from the anchor tag */
+}
+
+/* Styling for the donate button */
+.donate-btn {
+    padding: 12px 25px; /* Increased padding around the button text */
+    background-color: #002db4; /* Green background for the button */
+    color: white; /* White text color */
+    border: none; /* Remove the border */
+    font-size: 18px; /* Larger font size for the button */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    border-radius: 5px; /* Slight rounded corners */
+    transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
+
+.donate-btn:hover {
+    background-color: #070261; /* Darker green on hover */
+}

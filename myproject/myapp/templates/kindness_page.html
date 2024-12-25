@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\kindness.css' %}">
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\styles.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\header.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\hero.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\footer.css' %}" rel="stylesheet" >
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <!-- Thank You Message -->
+        <div class="thank-you-message">
+            <h2>Thank You for Your Kindness!</h2>
+            <p>Your generous donation will bring smiles to many children in need. You have made a big difference!</p>
+            <a href="#" class="kindness-btn">Spread More Kindness</a>
+        </div>
+
+        <h1>Donation Statistics and Hunger Awareness</h1>
+
+        <!-- Charts Container -->
+        <div class="chart-container">
+            <div id="donationChart" class="chart-box"></div>
+            <div id="hungerChart" class="chart-box"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Google Charts -->
+    <script type="text/javascript">
+        // Load Google Charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawCharts);
+
+        // Function to Draw Charts
+        function drawCharts() {
+            // Donation Bar Chart (INR)
+            var donationData = google.visualization.arrayToDataTable([
+                ['Month', 'Donations (INR)'],
+                ['July', 42605],
+                ['August', 34084],
+                ['September', 51126],
+                ['October', 68168],
+                ['November', 63907],
+                ['December', 80949]
+            ]);
+
+            var donationOptions = {
+                title: 'Monthly Donations (INR)',
+                hAxis: { title: 'Month' },
+                vAxis: { title: 'Donations (INR)' },
+                colors: ['#3498db'],
+                chartArea: { width: '70%', height: '70%' }
+            };
+
+            var donationChart = new google.visualization.ColumnChart(document.getElementById('donationChart'));
+            donationChart.draw(donationData, donationOptions);
+
+            // Hunger Awareness Pie Chart
+            var hungerData = google.visualization.arrayToDataTable([
+                ['Status', 'Percentage'],
+                ['Affected', 190],
+                ['Not Affected', 830]
+            ]);
+
+            var hungerOptions = {
+                title: 'Hunger Awareness in India',
+                is3D: true,
+                colors: ['#e74c3c', '#2ecc71']
+            };
+
+            var hungerChart = new google.visualization.PieChart(document.getElementById('hungerChart'));
+            hungerChart.draw(hungerData, hungerOptions);
+        }
+    </script>
+</body>
+</html>
