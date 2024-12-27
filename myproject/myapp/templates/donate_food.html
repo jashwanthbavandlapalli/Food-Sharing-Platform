@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\request_form.css' %}">
     <link rel="stylesheet" href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\donate_food.css' %}">
     <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\styles.css' %}" rel="stylesheet" >
     <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\header.css' %}" rel="stylesheet" >
@@ -36,10 +37,10 @@
 </header>
 
 <h1 class="h1">Donate to an Orphanage</h1>
-<div class="donate-container">
-    <p class="donate-text">Your contribution can bring smiles to many children in need. Select a cause to support.</p>
+<div class="request-container">
+    <p class="request-text">Your contribution can bring smiles to many children in need. Select a cause to support.</p>
     <a href="{% url 'donate_form' %}" class="donate-button">
-        <button type="button" class="donate-btn">Donate Now</button>
+        <button type="button" class="request-btn">Donate Now</button>
     </a>    
 </div>
 

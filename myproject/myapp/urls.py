@@ -14,8 +14,10 @@ urlpatterns = [
     path('request/', views.request_food, name='request_food'),
     path('',views.search_food, name='search_food'),
     path('find_us/',views.find_us, name='find_us'),
-    path('donate-form/', views.donate_form, name='donate_form'),
+    path('donate/donate-form/', views.donate_form, name='donate_form'),
     path('submit-donate-form/', views.submit_donate_form, name='submit_donate_form'),
-    path('kindness-page/', views.kindness_page, name='kindness_page'),
+    path('donate/donate-form/kindness-page/', views.kindness_page, name='kindness_page'),
+    path('request/request-form/', views.request_form, name='request_form'),
+    path('submit-request-form/', views.submit_request_form, name='submit_request_form'),
 
 ]

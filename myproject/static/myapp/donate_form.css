@@ -82,7 +82,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .submit-btn {
-    background-color: #2ecc71;
+    background-color: #136195;
     color: white;
     border: none;
     padding: 15px 20px;
@@ -92,7 +92,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .submit-btn:hover {
-    background-color: #27ae60;
+    background-color: #094067;
 }
 
 #items-container {

@@ -40,9 +40,18 @@ def submit_donate_form(request):
 def kindness_page(request):
     return render(request, 'kindness_page.html')
 
+def submit_request_form(request):
+    if request.method == 'POST':
+        request_success = True
+        if request_success:
+            return redirect('kindness_page') 
+    return render(request, 'request_form.html', {'request_success': request_success})
 
 def request_food(request):
     return render(request, 'request_food.html')
+
+def request_form(request):
+    return render(request, 'request_form.html')
 
 def search_food(request):
     return render(request, 'search_food')

@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\request_form.css' %}">
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\styles.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\header.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\hero.css' %}" rel="stylesheet" >
+    <link href="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\footer.css' %}" rel="stylesheet" >
+</head>
+<body>
+<header class="header">
+    <div class="logo-container">
+        <img src="{% static 'C:\Users\hp\OneDrive\Desktop\Food-Sharing-Platform\myproject\static\myapp\images\logo_dark.png' %}" alt="Logo">
+    </div>
+    <nav>
+        <a href="{% url 'home' %}" class="main_html">Home</a>
+        <a href="{% url 'donate_food' %}">Donate</a>
+        <a href="{% url 'request_food' %}">Request</a>
+        <a href="{% url 'find_us' %}">Find Us</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+        <!-- Theme Toggle Button -->
+    </nav>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for food..">
+        <button class="submit-button" type="submit">Search</button>
+    </div>
+</header>
+
+<div class="request-form-container">
+    <h1>Request Food from Hotels & Restaurants</h1>
+
+    {% if request_success %}
+    <div class="thank-you-message">
+        <h2>Request Submitted Successfully!</h2>
+        <p>We appreciate your request, and our team will contact you soon.</p>
+        <a href="{% url 'home' %}" class="home-btn">Back to Home</a>
+    </div>
+    {% else %}
+    <form method="POST" action="{% url 'submit_request_form' %}">
+        {% csrf_token %}
+        <!-- Requester Name -->
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+            <label for="mobile">Your Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+            <label for="address">Your Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+        </div>
+
+        <!-- Food Items Requested -->
+        <div class="form-group">
+            <label for="requested_items">Requested Food Items:</label>
+            <textarea id="requested_items" name="requested_items" rows="4" required></textarea>
+        </div>
+
+        <!-- Preferred Pickup Date & Time -->
+        <div class="form-group">
+            <label for="pickup_time">Preferred Pickup Date & Time:</label>
+            <input type="datetime-local" id="pickup_time" name="pickup_time" required>
+        </div>
+
+        <!-- Restaurant/Hotel Selection -->
+        <div class="form-group">
+            <label for="restaurant">Select Restaurant/Hotel:</label>
+            <select id="restaurant" name="restaurant" required>
+                <option value="restaurant1">Hotel Taj</option>
+                <option value="restaurant2">Green Restaurant</option>
+                <option value="restaurant3">Spicy Delight</option>
+                <option value="restaurant4">Golden Palace</option>
+                <option value="restaurant5">Taste Paradise</option>
+            </select>
+        </div>
+
+        <!-- Additional Comments -->
+        <div class="form-group">
+            <label for="comments">Any Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="submit-btn">Submit Request</button>
+        </div>
+    </form>
+    {% endif %}
+</div>
+</body>
+</html>
